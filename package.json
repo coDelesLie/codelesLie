@@ -5,7 +5,11 @@
     "express": "^4.13.3",
     "socket.io": "^1.3.7",
     "ejs":"1.0.0",
-    "multer":"",
-    "path":""
+    "multer":"latest",
+    "path":"latest",
+    "serve-favicon":"latest",
+    "express-session":"latest",
+    "errorhandler":"latest",
+    "body-parser":"latest"
   }
 }

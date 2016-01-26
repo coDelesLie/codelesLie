@@ -8,7 +8,7 @@ class login{
     }
 
     loginin(req,res){
-        res.render('model',{});
+        res.render('index',{title :"love"});
     }
 
     logout(){

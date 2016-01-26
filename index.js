@@ -12,19 +12,20 @@ let errorHandler = require('errorhandler');
 let routes = require('./routes/index');
 let app = express();
 
+app.set('views','cloud/views');   // 设置模板目录
+app.set('view engine', 'ejs');    // 设置 template 引擎
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(session({ resave: true,
     saveUninitialized: true,
     secret: 'uwotm8' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(multer());
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'codelesLie')));
 // development only
 if ('development' == app.get('env')) {
     app.use(errorHandler());
